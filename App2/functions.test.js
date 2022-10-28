@@ -74,11 +74,28 @@ test('User should be Brad Traversy object' , () => {
 //Regex
 test('There is no team', () => {
     expect('teami').not.toMatch(/I/)
-})
+});
 
 //Arrays
 test('Admin should be in username' , () => {
     usernames = ['john', 'karen', 'admin'];
     expect(usernames).toContain('admin');
-})
+});
 
+// Working with async data 
+
+//Promise 
+// test('User fetched name should be Leanne Graham', () => {
+//     expect.assertions(1);   //number of data 1
+//     return functions.fetchUser()
+//        .then(data => {
+//           expect(data.name).toEqual('Leanne Graham');
+//        });
+// });
+
+// Async Await 
+test('User fetched name should be Leanne Graham', async () => {
+    expect.assertions(1);   //number of data 1
+    const data = await functions.fetchUser();
+    expect(data.name).toEqual('Leanne Graham');
+})
