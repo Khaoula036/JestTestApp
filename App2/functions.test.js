@@ -1,12 +1,39 @@
 const { createUser } = require('./functions');
 const functions = require('./functions');
 
-//ToBe
+//Before and After each test 
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
+
+//Befor and After All tests
+//  beforeAll(() => initDatabase());
+//  afterAll(() => closeDatabase());
+
+// const initDatabase = () => console.log('Database Initialized...');
+// const closeDatabase = () => console.log('Database closed...');
+const nameCheck = () => console.log('checking Name....');
+
+describe('checking Names', () => {
+    beforeEach(() => nameCheck());
+
+    test('User is Jeff', () => {
+        const user = 'Jeff';
+        expect(user).toBe('Jeff');
+    });
+    
+    test('User is Karen', () => {
+        const user = 'Karen';
+        expect(user).toBe('Karen');
+    });
+    
+})
+
+//toBe
 test('Adds 2 +2 to equal 4' , () => {
     expect(functions.add(2, 2)).toBe(4);
 });
 
-//NottoBe
+//Not toBe
 test('Adds 2 +2 to NOT equal 5' , () => {
     expect(functions.add(2, 2)).not.toBe(5);
 });

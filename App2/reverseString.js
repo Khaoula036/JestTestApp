@@ -6,3 +6,6 @@ const reverseString = str =>
        .join('');
 
 module.exports = reverseString; 
+
+
+//to run automatically : npm run testWatch
